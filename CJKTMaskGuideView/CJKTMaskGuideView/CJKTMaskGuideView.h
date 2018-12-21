@@ -26,20 +26,18 @@ typedef NS_ENUM(NSUInteger, CJKTMaskGuideViewCoverType) {
     CJKTMaskGuideViewCoverTypeBlurred       //模糊
 };
 
-
+//描述label所处的位置
 typedef NS_ENUM(NSUInteger, CJKTMaskGuideViewLayoutType) {
-    CJKTMaskGuideViewLayoutTypeUP,          //描述label所处的位置
-    CJKTMaskGuideViewLayoutTypeLeftUP,
-    CJKTMaskGuideViewLayoutTypeLeft,
-    CJKTMaskGuideViewLayoutTypeLeftDown,
-    CJKTMaskGuideViewLayoutTypeDown,
-    CJKTMaskGuideViewLayoutTypeRightDown,
-    CJKTMaskGuideViewLayoutTypeRight,
-    CJKTMaskGuideViewLayoutTypeRightUP,
+    CJKTMaskGuideViewLayoutTypeUP,        //上
+    CJKTMaskGuideViewLayoutTypeLeftUP,    //左上
+    CJKTMaskGuideViewLayoutTypeLeft,      //左
+    CJKTMaskGuideViewLayoutTypeLeftDown,   //左下
+    CJKTMaskGuideViewLayoutTypeDown,       //下
+    CJKTMaskGuideViewLayoutTypeRightDown,  //右下
+    CJKTMaskGuideViewLayoutTypeRight,      //右
+    CJKTMaskGuideViewLayoutTypeRightUP,     //右上
     
 };
-
-
 
 @protocol CJKTMaskGuideViewDelegate <NSObject>
 
@@ -58,28 +56,27 @@ typedef NS_ENUM(NSUInteger, CJKTMaskGuideViewLayoutType) {
 
 @property (nonatomic,assign,getter=isDesHidden) BOOL desHidden;//是否隐藏
 
-//遮罩模糊半径
-//is essential to bluredCoverType  0 — 1  default is 0.5
+//遮罩模糊半径 0 — 1 默认 0.5
 @property(nonatomic,assign) CGFloat blurRadius;
-//镂空部位
-//is essential to coloredCoverType  default is 0 0 0 0.8
+
+//镂空部位 默认  0 0 0 0.8
 @property (nonatomic,strong) UIColor *coverColor;
-//white
+
+// 默认  white
 @property (nonatomic,strong,readonly) UIColor* tintColor;
 
-//default is 0.2
+//显示时间 默认  0.2
 @property (nonatomic,assign) CGFloat showDuration;
-//default is 0.2
+//消失时间  默认  0.2
 @property (nonatomic,assign) CGFloat dismissDuration;
 
-//x轴外扩的值   default is -5
+//x轴外扩的值   默认  -5
 @property(nonatomic,assign) CGFloat insetX;
-//Y轴外扩的值   default is -5
+//Y轴外扩的值   默认  -5
 @property(nonatomic,assign) CGFloat insetY;
 
 
 @property (nonatomic,assign,readonly) CGRect revealFrame;//镂空部分的Frame
-
 @property (nonatomic,assign) CJKTMaskGuideViewLayoutType layoutType;//描述label所处的位置类型
 @property (nonatomic,assign) CGPoint neverBtnCenter;
 

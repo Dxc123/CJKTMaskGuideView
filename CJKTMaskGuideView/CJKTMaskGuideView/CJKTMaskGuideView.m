@@ -13,12 +13,10 @@
 
 @property(nonatomic,weak) UIView *revealView;
 @property (nonatomic,strong) UIImage* bgImg;
-
-@property (nonatomic,weak) UIImageView* arrowImgView;
-
-@property (nonatomic,weak) UILabel* desLabel;
-@property (nonatomic,weak) UILabel* subDesLabel;
-@property (nonatomic,weak) UIButton* dismissBtn;
+@property (nonatomic,weak) UIImageView* arrowImgView;//箭头图片
+@property (nonatomic,weak) UILabel* desLabel;//标题描述按钮
+@property (nonatomic,weak) UILabel* subDesLabel;//副标题描述按钮
+@property (nonatomic,weak) UIButton* dismissBtn;//消失按钮
 @property (nonatomic,weak) UIButton* neverBtn; //不再提示按钮
 
 @end
